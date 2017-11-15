@@ -158,6 +158,11 @@ Notation "x = y = z" := (Eq3 x y z) : group_presentation.
 Notation "( r1 , r2 , .. , rn )" := 
   (And .. (And r1 r2) .. rn) : group_presentation.
 
+(* Allow further overloading of the cast (x : T) syntax *)
+Notation "x : T" := (x : T)
+  (at level 100, right associativity,
+   format "'[hv' x '/ '  :  T ']'") : core_scope.
+
 (* Declare (implicitly) the argument scope tags. *)
 Notation "x : p" := (fun x => Cast p) : nt_group_presentation.
 Arguments Scope Generator [nt_group_presentation].
